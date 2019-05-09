@@ -1,5 +1,5 @@
 # enconding: utf-8
-from django.db.models import CharField, ForeignKey, CASCADE
+from django.db.models import CharField, ForeignKey, PROTECT 
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from sendengo.utils.model import ModelDateTimeField
@@ -43,7 +43,7 @@ class CatalogCategory(ModelDateTimeField):
 class CatalogRequirement(ModelDateTimeField):
 
     # Relation to a category
-    category = ForeignKey(CatalogCategory, verbose_name=_('Category type'), on_delete=CASCADE)
+    category = ForeignKey(CatalogCategory, verbose_name=_('Category type'), on_delete=PROTECT)
 
     # Name requirement
     name = CharField(_("Name requirement"), blank=True, max_length=128)

@@ -7,7 +7,7 @@ class ShipperAdmin(admin.ModelAdmin):
 
     readonly_fields = ["created", ]
     fieldsets = (("Shipper", {"fields": ("company_name", "address", "phone", "email", )}), )
-    list_display = ["company_name", "address", "email", "phone", "view_requirements"]
+    list_display = ["company_name", "address", "email", "phone", "view_requirements", "num_requirements"]
     search_fields = ["company_name", ]
 
 

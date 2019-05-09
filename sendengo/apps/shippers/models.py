@@ -1,5 +1,5 @@
 # enconding: utf-8
-from django.db.models import CharField, ForeignKey, CASCADE
+from django.db.models import CharField , IntegerField, ForeignKey, PROTECT, Count, Q, F
 from django.utils.translation import ugettext_lazy as _
 from sendengo.utils.model import ModelDateTimeField
 from sendengo.apps.catalog.models import CatalogCategory, CatalogRequirement
@@ -20,15 +20,22 @@ class Shipper(ModelDateTimeField):
     # Correo electrónico de la empresa embarcadora
     email = CharField(_("Email"), blank=True, max_length=254)
 
+    # Register to increment o decrement the number of requirements to prevent the use of COUNT QUERIES
+    num_requirements = IntegerField(_('Num requirements'), default=0)
+
     def view_requirements(self):
         status_verbose_service = _("View requirements")
-        count_requirements = self.shipperrequirement_set.all().count()
+        count_requirements = self.num_requirements
 
         return mark_safe(F'<a href="/shippers/shipperrequirement/?shipper__id__exact={self.id}" class="button">{status_verbose_service} ({count_requirements})</a>')
     view_requirements.short_description = _("View requirements")
 
     def __str__(self):
         return self.company_name
+
+    def delete(self, *args, **kwargs):
+        print("DELETING")
+        super(Shipper, self).delete(*args, **kwargs)
 
     class Meta:
         verbose_name = "Embarcador"
@@ -60,12 +67,12 @@ class ShipperRequirement(ModelDateTimeField):
             * Tarjeta de circulación
     """
 
-    shipper = ForeignKey(Shipper, verbose_name=_('Shipper'), on_delete=CASCADE)
+    shipper = ForeignKey(Shipper, verbose_name=_('Shipper'), on_delete=PROTECT)
 
     category = ForeignKey(CatalogCategory, verbose_name=_('Category Requirement'),
-                          blank=True, null=True, on_delete=CASCADE)
+                          blank=True, null=True, on_delete=PROTECT)
 
-    requirement = ForeignKey(CatalogRequirement, verbose_name=_('Requirement'), on_delete=CASCADE)
+    requirement = ForeignKey(CatalogRequirement, verbose_name=_('Requirement'), on_delete=PROTECT)
 
     def save(self, *args, **kwargs):
 
@@ -80,3 +87,4 @@ class ShipperRequirement(ModelDateTimeField):
     class Meta:
         verbose_name = "Requerimiento"
         verbose_name_plural = "Requerimientos"
+
