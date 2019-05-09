@@ -13,15 +13,23 @@ Build docker Image
 
     $ docker-compose -f local.yml build
 
+Run
+--------
+
 Run recent docker instance with the following command and wait.
 
     $ docker-compose -f local.yml up
 
+Create Users
+--------
 
 Create a superuser attaching this command to our running instance 
 
     $ docker-compose -f local.yml run --rm django python manage.py createsuperuser
 
+
+View Admin panel
+--------
 Now open the current port on your browser (must be http://0.0.0.0:8000/) and will appear a loggin session 
 
 
