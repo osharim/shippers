@@ -83,9 +83,9 @@ Catalogos
 
 # Obtener todos los catálogos
 
-::
  
     GET /api/v1/catalog/
+
     HTTP 200 OK
     Allow: GET, POST, HEAD, OPTIONS
     Content-Type: application/json
