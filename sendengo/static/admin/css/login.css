@@ -1,0 +1,17 @@
+body.login #container {
+    background: #313b4c;
+     text-align: center;
+     padding: 60px 20px 20px;
+     border-radius: 5px;
+ }
+ body.login #container .form-row {
+     text-align:left;
+ }
+ input[type="submit"] {
+     background: #0CA669 !important;
+     width: 100%;
+ }
+
+ body.login .submit-row {
+    padding: 0;
+}

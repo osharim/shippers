@@ -1,0 +1,12 @@
+thead th, tfoot td {
+    font-weight: normal;
+    white-space: initial !important;
+    vertical-align: middle;
+    font-size: 10px !important;
+    width: 112px;
+}
+
+.sidebar-link-label {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
