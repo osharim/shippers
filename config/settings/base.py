@@ -77,6 +77,7 @@ LOCAL_APPS = [
     "sendengo.apps.users.apps.UsersAppConfig",
     "sendengo.apps.shippers.apps.ShippersAppConfig",
     "sendengo.apps.catalog.apps.CatalogAppConfig",
+    "sendengo.apps.carrier.apps.CarrierAppConfig",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_ADMIN + DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -232,6 +233,13 @@ JET_SIDE_MENU_ITEMS = [
 
     {'label': "Embarcadores", 'items': [{'name': 'shippers.shipper'},
                                         {'name': 'shippers.shipperrequirement'}, ]},
+
+ {'label': "Embarcadores", 'items': [{'name': 'shippers.shipper'},
+                                        {'name': 'shippers.shipperrequirement'}, ]},
+
+
+    
+
 
     {'label': "Catalogos de requerimientos", 'items': [{'name': 'catalog.catalogcategory'},
                                                        {'name': 'catalog.catalogrequirement'}, ]}
