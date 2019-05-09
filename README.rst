@@ -23,6 +23,7 @@ Now open the current port on your browser (must be http://0.0.0.0:8000/) and wil
 
 .. image:: ./docs/admin.png
 
+.. image:: ./docs/admin_view.png
 
 Settings
 --------
