@@ -29,7 +29,7 @@ class CarrierRequirementViewSet(viewsets.ModelViewSet):
 
     def list(self, request, carrier_pk):
         if self.request.user.is_authenticated:
-            serializer = self.serializer_class(self.queryset.filter(category=carrier_pk), many=True)
+            serializer = self.serializer_class(self.queryset.filter(carrier=carrier_pk), many=True)
             return Response(serializer.data)
         else:
             raise PermissionDenied()
