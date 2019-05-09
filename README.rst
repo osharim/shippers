@@ -498,8 +498,8 @@ ya que esta cumpliendo con todos los requerimientos que solicita el Shipper(Emba
   ]
 
 
-¿Como funciona?
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+¿Cómo funciona?
+^^^^
 
 
 Partiendo de un sistema de catalogos y organización de requerimientos a través de categorias, resulta generar mayor versatilidad
@@ -551,7 +551,7 @@ Return <Shipper Models> with the following structure.
   }
 
 # Extra: If you need to know what requirement is needed please, exec the following Query
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^
 
 ::
 
@@ -565,7 +565,7 @@ Return <Shipper Models> with the following structure.
 
 
 Code to find shippers 
-~~~~~~~~~~~~~~~~~~~~~~~~~~C
+^^^^
 
 ::
 
