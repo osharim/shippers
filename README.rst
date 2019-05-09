@@ -71,9 +71,44 @@ Need more time to explain how this docker recipe works
 
 
 API Doc.
+----------
+.. image:: ./docs/api_view.png
+
+
+Short API documentation.
+
+
+Catalogos
 ^^^^^^
 
-Need more time to explain how this docker recipe works 
+# Obtener todos los catálogos
+
+::
+ 
+    GET /api/v1/catalog/
+    HTTP 200 OK
+    Allow: GET, POST, HEAD, OPTIONS
+    Content-Type: application/json
+    Vary: Accept
+
+    [
+        {
+            "id": 3,
+            "created": "2019-05-09T03:19:18.867203Z",
+            "name": "Conductor"
+        },
+        {
+            "id": 2,
+            "created": "2019-05-09T03:10:43.965946Z",
+            "name": "Vehiculo"
+        },
+        {
+            "id": 1,
+            "created": "2019-05-09T02:59:13.760607Z",
+            "name": "Documentación de transportista"
+        }
+    ]
+
 
 
 
