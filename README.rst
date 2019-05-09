@@ -175,6 +175,7 @@ Obtener todos los embarcaderos
 ::
 
   GET /api/v1/shipper/
+
   HTTP 200 OK
   Allow: GET, POST, HEAD, OPTIONS
   Content-Type: application/json
@@ -201,3 +202,201 @@ Obtener todos los embarcaderos
       }
   ]
 
+
+Obtener el detalle de un embarcadero 
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+  GET /api/v1/shipper/1/
+
+  HTTP 200 OK
+  Allow: GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+  Content-Type: application/json
+  Vary: Accept
+
+  {
+      "id": 1,
+      "created": "2019-05-09T03:49:49.886842Z",
+      "company_name": "Omar Shipper Company",
+      "address": "av adolfo lopez mateos",
+      "phone": "5519300630",
+      "email": "omar.sh.bentel@gmail.com",
+      "num_requirements": 4 # Ha guardado 4 requerimientos este embarcadero; Más adelante se explica su funcionamiento (en el código)
+  }
+
+Obtener los requerimientos de un embarcadero determinado a traves de su ID 
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+  GET /api/v1/shipper/1/requirements/
+
+  HTTP 200 OK
+  Allow: GET, POST, HEAD, OPTIONS
+  Content-Type: application/json
+  Vary: Accept
+
+  [
+      {
+          "id": 23,
+          "requirement": {
+              "id": 1,
+              "created": "2019-05-09T03:02:45.816558Z",
+              "name": "RFC",
+              "category": 1
+          },
+          "category": {
+              "id": 1,
+              "created": "2019-05-09T02:59:13.760607Z",
+              "name": "Documentación de transportista"
+          },
+          "created": "2019-05-09T18:34:10.632731Z",
+          "shipper": 2
+      },
+      {
+          "id": 27,
+          "requirement": {
+              "id": 1,
+              "created": "2019-05-09T03:02:45.816558Z",
+              "name": "RFC",
+              "category": 1
+          },
+          "category": {
+              "id": 1,
+              "created": "2019-05-09T02:59:13.760607Z",
+              "name": "Documentación de transportista"
+          },
+          "created": "2019-05-09T18:37:44.015967Z",
+          "shipper": 1
+      },
+      {
+          "id": 28,
+          "requirement": {
+              "id": 10,
+              "created": "2019-05-09T03:22:20.878837Z",
+              "name": "Comprobante de domicilio del representante legal",
+              "category": 1
+          },
+          "category": {
+              "id": 1,
+              "created": "2019-05-09T02:59:13.760607Z",
+              "name": "Documentación de transportista"
+          },
+          "created": "2019-05-09T18:42:38.557929Z",
+          "shipper": 2
+      }
+  ]
+
+Carrier(Transportista)
+^^^^^
+
+Obtener el listado de todos los transportistas 
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+  GET /api/v1/carrier/
+
+  HTTP 200 OK
+  Allow: GET, POST, HEAD, OPTIONS
+  Content-Type: application/json
+  Vary: Accept
+
+  [
+      {
+          "id": 1,
+          "created": "2019-05-09T06:12:50.751804Z",
+          "status": "VALIDATED",
+          "company_name": "Omar Transportista",
+          "owner_name": "Omar",
+          "owner_surname": "Sharim",
+          "address": "av adolfo lopez mateos",
+          "phone": "5519300630",
+          "email": "omar@bentel.mx"
+      }
+  ]
+
+
+Obtener el detalle de un transportista 
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+  GET /api/v1/carrier/1/
+
+  HTTP 200 OK
+  Allow: GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+  Content-Type: application/json
+  Vary: Accept
+
+  {
+      "id": 1,
+      "created": "2019-05-09T06:12:50.751804Z",
+      "status": "VALIDATED",
+      "company_name": "Omar Transportista",
+      "owner_name": "Omar",
+      "owner_surname": "Sharim",
+      "address": "av adolfo lopez mateos",
+      "phone": "5519300630",
+      "email": "omar@bentel.mx"
+  }
+
+Obtener los requerimientos ingresados por el transportista
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+- podrian tambien entenderse como "requerimientos que son cumplidos por el transportista y son requeridos por el embarcador"
+
+::
+
+  GET /api/v1/carrier/1/requirements/
+
+  HTTP 200 OK
+  Allow: GET, POST, HEAD, OPTIONS
+  Content-Type: application/json
+  Vary: Accept
+
+  [
+      {
+          "id": 20,
+          "requirement": {
+              "id": 1,
+              "created": "2019-05-09T03:02:45.816558Z",
+              "name": "RFC",
+              "category": 1
+          },
+          "category": {
+              "id": 1,
+              "created": "2019-05-09T02:59:13.760607Z",
+              "name": "Documentación de transportista"
+          },
+          "created": "2019-05-09T19:46:13.506806Z",
+          "carrier": 1
+      }
+  ]
+
+
+Ver todos los embarcaderos a los cuales puede hacer uso este transportista
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+  GET /api/v1/carrier/1/compliance/
+
+  HTTP 200 OK
+  Allow: GET, POST, HEAD, OPTIONS
+  Content-Type: application/json
+  Vary: Accept
+
+  [
+      {
+          "id": 1,
+          "created": "2019-05-09T03:49:49.886842Z",
+          "company_name": "Omar Shipper Company",
+          "address": "av adolfo lopez mateos",
+          "phone": "5519300630",
+          "email": "omar.sh.bentel@gmail.com",
+          "num_requirements": 4
+      }
+  ]
+
+Para entender a fondo su funcionamiento, ir al .. utils:: ./sendengo/utils/shippers_in_complience.py
