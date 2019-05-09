@@ -40,7 +40,8 @@ Test coverage
 To run the tests, check your test coverage, and generate an HTML coverage report::
 
     $ docker-compose -f local.yml run django coverage run -m pytest
-    $ coverage html
+    $ docker-compose -f local.yml run django coverage html
+    $ docker-compose -f local.yml run django coverage report 
     $ open htmlcov/index.html
 
 Running tests with py.test
@@ -50,25 +51,6 @@ Running tests with py.test
 
   $ docker-compose -f local.yml run django pytest
   
-
-Deployment
-----------
-
-The following details how to deploy this application.
-
-
-Heroku
-^^^^^^
-
-Need more time to explain how to upload this project to Heroku
-
-
-Docker
-^^^^^^
-
-Need more time to explain how this docker recipe works 
-
-
 
 API Doc
 ----------
