@@ -173,6 +173,7 @@ Obtener todos los embarcaderos
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
+
   GET /api/v1/shipper/
   HTTP 200 OK
   Allow: GET, POST, HEAD, OPTIONS
