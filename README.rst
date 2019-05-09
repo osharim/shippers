@@ -86,7 +86,7 @@ Un Catalogo tiene categorias y todos los requerimientos estan relacionados a una
 Obtener todos los catálogos
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- ::
+::
 
   GET /api/v1/catalog/
 
@@ -117,7 +117,7 @@ Obtener todos los catálogos
 Obtener la instancia de un solo catalogo 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- ::
+::
 
   GET /api/v1/catalog/1/
 
@@ -136,7 +136,7 @@ Obtener la instancia de un solo catalogo
 Obtener la todos los requerimientos organizados en un catalogo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- ::
+::
 
   GET /api/v1/catalog/1/requirements/
 
