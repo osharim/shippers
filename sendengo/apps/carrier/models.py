@@ -50,8 +50,8 @@ class Carrier(ModelDateTimeField, StatusRequirementDisplay):
     view_requirements.short_description = _("View requirements")
 
     def get_shippers_in_compliance(self):
-        # how the list of the shippers in which the condition of being in compliance is fulfilled
-        print(get_shippers_list(self))
+        # Get list of the shippers in which the condition of being in compliance is fulfilled
+        return get_shippers_list(self)
 
     def get_shippers_in_compliance_count(self):
         return len(get_shippers_list(self))

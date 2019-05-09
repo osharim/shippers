@@ -11,4 +11,5 @@ django-jet==1.0.8 # https://github.com/geex-arts/django-jet
 
 # Django REST Framework
 djangorestframework==3.9.3  # https://github.com/encode/django-rest-framework
+drf-nested-routers==0.91 # https://github.com/alanjds/drf-nested-routers
 coreapi==2.3.3  # https://github.com/core-api/python-client
