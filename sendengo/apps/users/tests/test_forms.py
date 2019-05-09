@@ -1,7 +1,7 @@
 import pytest
 
-from sendengo.users.forms import UserCreationForm
-from sendengo.users.tests.factories import UserFactory
+from sendengo.apps.users.forms import UserCreationForm
+from sendengo.apps.users.tests.factories import UserFactory
 
 pytestmark = pytest.mark.django_db
 
