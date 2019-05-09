@@ -1,7 +1,6 @@
-sendengo
+Sendengo
 ========
-
-Challenge sendengo application made by @osharim 
+by @osharim 
 
 Settings
 --------
