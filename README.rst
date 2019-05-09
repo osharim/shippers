@@ -70,7 +70,7 @@ Need more time to explain how this docker recipe works
 
 
 
-API Doc.
+API Doc
 ----------
 .. image:: ./docs/api_view.png
 
@@ -81,9 +81,16 @@ Short API documentation.
 Catalogos
 ^^^^^^
 
-# Obtener todos los catálogos
+Todos los requerimientos de la plataforma se han consentrado en un listado de catalogos, este catalogo tiene como finalidad
+el organizar todos los requerimientos a través de categorias.
 
- 
+Un Catalogo tiene categorias y todos los requerimientos estan relacionados a una categoria.
+
+Obtener todos los catálogos
+^^^^^^^
+
+ ::
+
     GET /api/v1/catalog/
 
     HTTP 200 OK
@@ -110,6 +117,20 @@ Catalogos
     ]
 
 
+Obtener la instancia de un solo catalogo en especifio 
+^^^^^^^^
 
+ ::
 
+    GET /api/v1/catalog/1/
+    HTTP 200 OK
+    Allow: GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+    Content-Type: application/json
+    Vary: Accept
+
+    {
+        "id": 1,
+        "created": "2019-05-09T02:59:13.760607Z",
+        "name": "Documentación de transportista"
+    }
 
