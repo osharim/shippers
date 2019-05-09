@@ -13,6 +13,7 @@ VALIDATION_PROCESS_STATUS = (
     ("SUSPENDED", _("Suspended")),
 )
 
+
 class Carrier(ModelDateTimeField):
 
     # Nombre de la empresa embarcadora
@@ -31,7 +32,8 @@ class Carrier(ModelDateTimeField):
     # Correo electrónico de la empresa embarcadora
     email = CharField(_("Email"), blank=True, max_length=254)
 
-    status = CharField(_("Status"), choices=VALIDATION_PROCESS_STATUS, blank=True, max_length=254, default="VALIDATION_IN_PROCCESS")
+    status = CharField(_("Status"), choices=VALIDATION_PROCESS_STATUS, blank=True,
+                       max_length=254, default="VALIDATION_IN_PROCCESS")
 
     def view_requirements(self):
         status_verbose_service = _("View requirements")
@@ -42,7 +44,7 @@ class Carrier(ModelDateTimeField):
 
     def get_status(self):
         background = '#9e9e9e'
-        status = self.get_status_display()    
+        status = self.get_status_display()
 
         if self.status == 'VALIDATION_IN_PROCCESS':
             background = '#e89657'
@@ -54,7 +56,7 @@ class Carrier(ModelDateTimeField):
             background = '#11ad36'
 
         return mark_safe(F"<div style='background:{background};' class='status-tag'>{status}</div> ")
-    
+
     get_status.allow_tags = True
     get_status.short_description = 'Status'
 
