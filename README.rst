@@ -2,6 +2,9 @@ Sendengo
 ========
 by @osharim 
 
+.. image:: ./docs/admin.png
+
+.. image:: ./docs/admin_view.png
 
 Install
 --------
@@ -21,9 +24,7 @@ Create a superuser attaching this command to our running instance
 
 Now open the current port on your browser (must be http://0.0.0.0:8000/) and will appear a loggin session 
 
-.. image:: ./docs/admin.png
 
-.. image:: ./docs/admin_view.png
 
 Settings
 --------
