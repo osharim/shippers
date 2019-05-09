@@ -166,3 +166,37 @@ Obtener la todos los requerimientos organizados en un catalogo
       }
   ]
 
+Shipper(Embarcadero)
+^^^^^^
+
+Obtener todos los embarcaderos
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+  GET /api/v1/shipper/
+  HTTP 200 OK
+  Allow: GET, POST, HEAD, OPTIONS
+  Content-Type: application/json
+  Vary: Accept
+
+  [
+      {
+          "id": 1,
+          "created": "2019-05-09T03:49:49.886842Z",
+          "company_name": "Omar Shipper Company",
+          "address": "av adolfo lopez mateos",
+          "phone": "5519300630",
+          "email": "omar.sh.bentel@gmail.com",
+          "num_requirements": 4
+      },
+      {
+          "id": 2,
+          "created": "2019-05-09T03:50:41.487076Z",
+          "company_name": "Amairani Shipper Company",
+          "address": "Lago chiem 104 Reforma pencil",
+          "phone": "5519300629",
+          "email": "amairani@gmail.com",
+          "num_requirements": 2
+      }
+  ]
+
