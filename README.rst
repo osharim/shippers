@@ -6,16 +6,16 @@ by @osharim
 Install
 --------
 
-Build our docker Image
+Build docker Image
 
     $ docker-compose -f local.yml build
 
-Run our recent docker instance and wait.
+Run recent docker instance with the following command and wait.
 
     $ docker-compose -f local.yml up
 
 
-Create a superuser
+Create a superuser attaching this command to our running instance 
 
     $ docker-compose -f local.yml run --rm django python manage.py createsuperuser
 
