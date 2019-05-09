@@ -123,6 +123,7 @@ Obtener la instancia de un solo catalogo en especifio
  ::
 
     GET /api/v1/catalog/1/
+
     HTTP 200 OK
     Allow: GET, PUT, PATCH, DELETE, HEAD, OPTIONS
     Content-Type: application/json
@@ -134,3 +135,35 @@ Obtener la instancia de un solo catalogo en especifio
         "name": "Documentación de transportista"
     }
 
+
+Obtener la todos los requerimientos organizados en un catalogo
+^^^^^^^^
+
+ ::
+
+    GET /api/v1/catalog/1/requirements/
+    HTTP 200 OK
+    Allow: GET, POST, HEAD, OPTIONS
+    Content-Type: application/json
+    Vary: Accept
+
+    [
+        {
+            "id": 10,
+            "created": "2019-05-09T03:22:20.878837Z",
+            "name": "Comprobante de domicilio del representante legal",
+            "category": 1
+        },
+        {
+            "id": 2,
+            "created": "2019-05-09T03:02:53.885238Z",
+            "name": "Acta constitutiva",
+            "category": 1
+        },
+        {
+            "id": 1,
+            "created": "2019-05-09T03:02:45.816558Z",
+            "name": "RFC",
+            "category": 1
+        }
+    ]
