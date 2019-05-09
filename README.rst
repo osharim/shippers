@@ -49,7 +49,7 @@ Running tests with py.test
 ::
 
   $ pytest
-
+  
 
 Deployment
 ----------
@@ -75,9 +75,6 @@ API Doc
 .. image:: ./docs/api_view.png
 
 
-Short API documentation.
-
-
 Catalogos
 ^^^^^^
 
@@ -87,83 +84,85 @@ el organizar todos los requerimientos a través de categorias.
 Un Catalogo tiene categorias y todos los requerimientos estan relacionados a una categoria.
 
 Obtener todos los catálogos
-^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  ::
 
-    GET /api/v1/catalog/
+  GET /api/v1/catalog/
 
-    HTTP 200 OK
-    Allow: GET, POST, HEAD, OPTIONS
-    Content-Type: application/json
-    Vary: Accept
+  HTTP 200 OK
+  Allow: GET, POST, HEAD, OPTIONS
+  Content-Type: application/json
+  Vary: Accept
 
-    [
-        {
-            "id": 3,
-            "created": "2019-05-09T03:19:18.867203Z",
-            "name": "Conductor"
-        },
-        {
-            "id": 2,
-            "created": "2019-05-09T03:10:43.965946Z",
-            "name": "Vehiculo"
-        },
-        {
-            "id": 1,
-            "created": "2019-05-09T02:59:13.760607Z",
-            "name": "Documentación de transportista"
-        }
-    ]
+  [
+      {
+          "id": 3,
+          "created": "2019-05-09T03:19:18.867203Z",
+          "name": "Conductor"
+      },
+      {
+          "id": 2,
+          "created": "2019-05-09T03:10:43.965946Z",
+          "name": "Vehiculo"
+      },
+      {
+          "id": 1,
+          "created": "2019-05-09T02:59:13.760607Z",
+          "name": "Documentación de transportista"
+      }
+  ]
 
 
-Obtener la instancia de un solo catalogo en especifio 
-^^^^^^^^
+Obtener la instancia de un solo catalogo 
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  ::
 
-    GET /api/v1/catalog/1/
+  GET /api/v1/catalog/1/
 
-    HTTP 200 OK
-    Allow: GET, PUT, PATCH, DELETE, HEAD, OPTIONS
-    Content-Type: application/json
-    Vary: Accept
+  HTTP 200 OK
+  Allow: GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+  Content-Type: application/json
+  Vary: Accept
 
-    {
-        "id": 1,
-        "created": "2019-05-09T02:59:13.760607Z",
-        "name": "Documentación de transportista"
-    }
+  {
+      "id": 1,
+      "created": "2019-05-09T02:59:13.760607Z",
+      "name": "Documentación de transportista"
+  }
 
 
 Obtener la todos los requerimientos organizados en un catalogo
-^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  ::
 
-    GET /api/v1/catalog/1/requirements/
-    HTTP 200 OK
-    Allow: GET, POST, HEAD, OPTIONS
-    Content-Type: application/json
-    Vary: Accept
+  GET /api/v1/catalog/1/requirements/
 
-    [
-        {
-            "id": 10,
-            "created": "2019-05-09T03:22:20.878837Z",
-            "name": "Comprobante de domicilio del representante legal",
-            "category": 1
-        },
-        {
-            "id": 2,
-            "created": "2019-05-09T03:02:53.885238Z",
-            "name": "Acta constitutiva",
-            "category": 1
-        },
-        {
-            "id": 1,
-            "created": "2019-05-09T03:02:45.816558Z",
-            "name": "RFC",
-            "category": 1
-        }
-    ]
+  HTTP 200 OK
+  Allow: GET, POST, HEAD, OPTIONS
+  Content-Type: application/json
+  Vary: Accept
+
+  [
+      {
+          "id": 10,
+          "created": "2019-05-09T03:22:20.878837Z",
+          "name": "Comprobante de domicilio del representante legal",
+          "category": 1
+      },
+      {
+          "id": 2,
+          "created": "2019-05-09T03:02:53.885238Z",
+          "name": "Acta constitutiva",
+          "category": 1
+      },
+      {
+          "id": 1,
+          "created": "2019-05-09T03:02:45.816558Z",
+          "name": "RFC",
+          "category": 1
+      }
+  ]
+
