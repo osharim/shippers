@@ -234,12 +234,8 @@ JET_SIDE_MENU_ITEMS = [
     {'label': "Embarcadores", 'items': [{'name': 'shippers.shipper'},
                                         {'name': 'shippers.shipperrequirement'}, ]},
 
- {'label': "Embarcadores", 'items': [{'name': 'shippers.shipper'},
-                                        {'name': 'shippers.shipperrequirement'}, ]},
-
-
-    
-
+    {'label': "Transportistas", 'items': [{'name': 'carrier.carrier'},
+                                            {'name': 'carrier.carrierrequirement'}, ]},
 
     {'label': "Catalogos de requerimientos", 'items': [{'name': 'catalog.catalogcategory'},
                                                        {'name': 'catalog.catalogrequirement'}, ]}
