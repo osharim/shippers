@@ -305,12 +305,8 @@ p.help {
 
 tr td:first-child {
     width: 10px !important;
-    padding: 0 !important;
 }
 
-tr th:first-child{
-    display: inherit;
-}
 
 .status-tag{
     border-radius: 5px;padding: 4px 6px;margin-right: 5px;display: initial;color: white;font-size: 11px;
