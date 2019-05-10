@@ -13,23 +13,23 @@ from sendengo.apps.carrier.views import CarrierViewSet, CarrierRequirementViewSe
 router = routers.SimpleRouter()
 
 # Register Catalog API
-router.register(r'catalog', CatalogViewSet, base_name='catalog')
+router.register(r'catalog', CatalogViewSet, basename='catalog')
 catalog_router = routers.NestedSimpleRouter(router, r'catalog', lookup='catalog')
-catalog_router.register(r'requirements', CatalogRequirementViewSet, base_name='requirements')
+catalog_router.register(r'requirements', CatalogRequirementViewSet, basename='requirements')
 
 
 # Register Shipper API
-router.register(r'shipper', ShipperViewSet, base_name='shipper')
+router.register(r'shipper', ShipperViewSet, basename='shipper')
 shipper_router = routers.NestedSimpleRouter(router, r'shipper', lookup='shipper')
-shipper_router.register(r'requirements', ShipperRequirementViewSet, base_name='requirements')
+shipper_router.register(r'requirements', ShipperRequirementViewSet, basename='requirements')
 
 # Register Carrier API
 
-router.register(r'carrier', CarrierViewSet, base_name='carrier')
+router.register(r'carrier', CarrierViewSet, basename='carrier')
 carrier_router = routers.NestedSimpleRouter(router, r'carrier', lookup='carrier')
-carrier_router.register(r'requirements', CarrierRequirementViewSet, base_name='requirements')
+carrier_router.register(r'requirements', CarrierRequirementViewSet, basename='requirements')
 
-carrier_router.register(r'compliance', CarrierViewShippersInComplianceViewSet, base_name='compliance')
+carrier_router.register(r'compliance', CarrierViewShippersInComplianceViewSet, basename='compliance')
 
 urlpatterns = [
 
