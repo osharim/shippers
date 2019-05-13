@@ -203,6 +203,3 @@ sentry_logging = LoggingIntegration(
     event_level=None,  # Send no events from log messages
 )
 sentry_sdk.init(dsn=SENTRY_DSN, integrations=[sentry_logging, DjangoIntegration()])
-
-# Your stuff...
-# ------------------------------------------------------------------------------

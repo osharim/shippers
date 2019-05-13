@@ -33,10 +33,6 @@ class Shipper(ModelDateTimeField):
     def __str__(self):
         return self.company_name
 
-    def delete(self, *args, **kwargs):
-        print("DELETING")
-        super(Shipper, self).delete(*args, **kwargs)
-
     class Meta:
         verbose_name = "Embarcador"
         verbose_name_plural = "Embarcadores"
