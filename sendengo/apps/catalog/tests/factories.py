@@ -26,7 +26,7 @@ class CatalogFactory(DjangoModelFactory):
     add any type of requirements in an automated way
     """
 
-    name = '' 
+    name = ''
 
     class Meta:
         model = CatalogCategory
@@ -36,7 +36,7 @@ class CatalogFactory(DjangoModelFactory):
 class CatalogRequirementFactory(DjangoModelFactory):
 
     category = SubFactory(CatalogFactory)
-    name = '' 
+    name = ''
 
     class Meta:
         model = CatalogRequirement

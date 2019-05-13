@@ -21,19 +21,20 @@ class CarrierFactory(DjangoModelFactory):
 
 
 class DriverFactory(DjangoModelFactory):
-    
+
     carrier = SubFactory(CarrierFactory)
     name = Faker("name")
     surname = Faker("last_name")
     license_expiration = Faker("date")
-    license_type = "A" 
+    license_type = "A"
     status = ''
 
     class Meta:
-        model = Driver 
+        model = Driver
+
 
 class VehicleFactory(DjangoModelFactory):
-    
+
     carrier = SubFactory(CarrierFactory)
     status = ''
     year = 2019
@@ -41,7 +42,6 @@ class VehicleFactory(DjangoModelFactory):
 
     class Meta:
         model = Vehicle
-
 
 
 class CarrierRequirementFactory(DjangoModelFactory):
@@ -52,7 +52,7 @@ class CarrierRequirementFactory(DjangoModelFactory):
     # category is assigned automaticly in <carrier.models.py save method>
 
     class Meta:
-        model = CarrierRequirement 
+        model = CarrierRequirement
 
 
 class CarrierWithRequirementsFactory(CarrierFactory):
@@ -67,5 +67,5 @@ class CarrierWithRequirementsFactory(CarrierFactory):
 
         if extracted:
             for requirement in extracted:
-                # añadir este requerimiento al carrier 
+                # añadir este requerimiento al carrier
                 CarrierRequirementFactory(carrier=obj, requirement=requirement)
