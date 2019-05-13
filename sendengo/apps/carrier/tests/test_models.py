@@ -80,7 +80,6 @@ class TestCarrier:
         vechile = VehicleFactory(carrier=carrier, status='VALIDATED')
 
         shipper_in_compliance = carrier.get_shippers_in_compliance()
-        print(shipper_in_compliance[0].__dict__, )
 
         # El resultado debe arrojar que este carrier <Transportista> cumple con todos los requisitos que solita un shipper
         assert len(shipper_in_compliance) == 1

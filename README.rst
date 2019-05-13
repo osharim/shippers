@@ -53,7 +53,26 @@ To run the tests, check your test coverage, and generate an HTML coverage report
     $ docker-compose -f local.yml run django coverage report 
     $ open htmlcov/index.html
 
-Running tests with py.test
+
+Test coverage 
+^^^^^^^^^^^^^
+
+::
+
+    Carrier
+
+        Views API: 
+
+            test_carrier_permission_forbidden - Probar que solo un usuario logeado pueda tener acceso a la API
+
+            test_carrier_list - Probar que un usuario logeado pueda tener acceso al resultado de datos esperado. 
+    
+        Models: 
+
+            test_carrier_is_in_full_compliance_with_one_shipper - Probar que el carrier este en cumplimiento por completo con un shipper
+
+
+Running tests with pytest
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
